@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "moody/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "moody/wsgi.py"
+    }
+  ]
+}
