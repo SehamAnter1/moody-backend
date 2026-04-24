@@ -1,0 +1,10 @@
+
+
+from django.urls import path
+
+from accounts.views import google_login, google_callback
+
+urlpatterns= [
+    path("google/login/", google_login),
+    path("google/callback/", google_callback),
+]

@@ -1,0 +1,11 @@
+db.sqlite3
+media/
+static/
+staticfiles/
+.env
+__pycache__/
+prompt.txt
+ENDPOINTS.md
+**/migrations/
+.db.sqlite3
+*.pyc
