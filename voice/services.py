@@ -18,7 +18,8 @@ model = None
 def get_model():
     global model
     if model is None:
-        model = WhisperModel("tiny", device="cpu")
+        model = WhisperModel("tiny", device="cpu",download_root="/tmp"
+)
         # model = WhisperModel("base", device="cpu")
     return model
 

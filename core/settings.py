@@ -16,6 +16,10 @@ from dotenv import load_dotenv
 load_dotenv()
 import dj_database_url
 
+# cache settings for Hugging Face models
+os.environ["HF_HOME"] = "/tmp"
+os.environ["TRANSFORMERS_CACHE"] = "/tmp"
+os.environ["HUGGINGFACE_HUB_CACHE"] = "/tmp"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
