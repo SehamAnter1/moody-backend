@@ -45,6 +45,7 @@ networkx==3.6.1
 numpy==2.4.4
 onnxruntime==1.25.0
 packaging==26.2
+pillow==12.2.0
 propcache==0.4.1
 protobuf==7.34.1
 psycopg2-binary==2.9.12
