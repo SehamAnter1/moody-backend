@@ -10,7 +10,7 @@ from django.conf import settings
 
 # Create your views here.
 User = get_user_model()
-from  django.shortcuts import redirect 
+from  django.shortcuts import redirect
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET", "")
 def get_redirect_uri(request):
