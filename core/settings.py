@@ -16,8 +16,8 @@ from dotenv import load_dotenv
 load_dotenv()
 import dj_database_url
 import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+import cloudinary.uploader
+import cloudinary.api
 
 # # cache settings for Hugging Face models - commented for Vercel deployment
 # os.environ["HF_HOME"] = "/tmp"
@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'rest_framework',
     'corsheaders',
     'accounts',
@@ -156,6 +158,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Use Cloudinary for media file storage (required for Vercel deployment)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
