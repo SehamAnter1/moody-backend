@@ -156,17 +156,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Use Cloudinary for media file storage (required for Vercel deployment)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-# Only set local MEDIA_ROOT in development, use Cloudinary otherwise
-if os.getenv('ENVIRONMENT') == 'development' or os.getenv('DEBUG') == 'True':
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = BASE_DIR / 'media'
-else:
-    # On Vercel/production, only use Cloudinary
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = None
 
 # Cloudinary configuration
 CLOUDINARY_STORAGE = {
