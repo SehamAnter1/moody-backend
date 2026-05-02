@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import FAQ, Hero, HeroImage
+from .models import FAQ, Hero, HeroImage, Steps
 
 # Register your models here.
 class HeroImagesInline(admin.TabularInline):
@@ -17,4 +17,9 @@ class HeroAdmin(admin.ModelAdmin):
 class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'answer', )
     search_fields = ('question',)
-    
+
+@admin.register(Steps)
+
+class StepsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', )
+    search_fields = ('title',)

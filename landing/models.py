@@ -30,3 +30,10 @@ class FAQ(models.Model):
     question_ar = models.CharField(max_length=255, null=True, blank=True)
     answer = models.TextField()
     answer_ar = models.TextField(null=True, blank=True)
+
+class Steps(SingletonModel):
+    title = models.CharField(max_length=150) 
+    title_ar = models.CharField(max_length=150, null=True, blank=True)
+    description = models.TextField()
+    description_ar = models.TextField(null=True, blank=True)
+    
