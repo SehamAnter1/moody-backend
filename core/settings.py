@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'accounts',
     'voice',
     'landing',
+    'ckeditor',
 
 ]
 auth_user_model = 'accounts.User'

@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # a model for one time content, which will be a singleton model (only one instance will exist)
 class SingletonModel(models.Model):
     class Meta:
@@ -37,3 +37,12 @@ class Steps(SingletonModel):
     description = models.TextField()
     description_ar = models.TextField(null=True, blank=True)
     
+class PrivacyPolicy(SingletonModel):
+    content = RichTextField()
+    content_ar = RichTextField()
+    last_updated = models.DateTimeField(auto_now=True)
+
+class TermsOfService(SingletonModel):
+    content = RichTextField()
+    content_ar =RichTextField()
+    last_updated = models.DateTimeField(auto_now=True)
