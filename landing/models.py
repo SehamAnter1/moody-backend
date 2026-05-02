@@ -25,3 +25,8 @@ class HeroImage(models.Model):
     hero = models.ForeignKey(Hero, related_name="images", on_delete=models.CASCADE) 
     image = models.ImageField(upload_to='hero_images/')
     
+class FAQ(models.Model):
+    question = models.CharField(max_length=255)
+    question_ar = models.CharField(max_length=255, null=True, blank=True)
+    answer = models.TextField()
+    answer_ar = models.TextField(null=True, blank=True)
